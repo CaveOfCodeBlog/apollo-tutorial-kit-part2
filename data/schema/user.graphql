@@ -1,0 +1,9 @@
+type User {
+  _id: String,
+  displayName: String,
+  email: String,
+  firstName: String,
+  lastName: String,
+  birthday: String,
+  cars: [ Car ]
+}
