@@ -4,7 +4,6 @@ import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import * as bodyParser from 'body-parser';
 import schema from './data/schema';
 import resolvers from './data/resolvers';
-import Mocks from './data/mocks';
 
 const GRAPHQL_PORT = 8080;
 
@@ -17,8 +16,6 @@ const executableSchema = makeExecutableSchema({
 
 addMockFunctionsToSchema({
   schema: executableSchema,
-  mocks: Mocks,
-  preserveResolvers: true,
 });
 
 graphQLServer.use('/graphql', bodyParser.json(), apolloExpress({
