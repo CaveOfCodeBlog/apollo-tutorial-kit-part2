@@ -1,4 +1,3 @@
-//import { Mongoose, Schema, Model } from 'mongoose';
 import mongoose from 'mongoose';
 
 const CarSchema = new mongoose.Schema({

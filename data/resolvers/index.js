@@ -1,11 +1,11 @@
-import { query } from "./query";
-import { user } from "./user";
-import { mutation } from "./mutation";
+import { Query } from './query';
+import { User } from './user';
+import { Mutation } from './mutation';
 
 const resolvers = {
-  Query: query,
-  Mutation: mutation,
-  User: user,
+  Query,
+  Mutation,
+  User
 };
 
-export default resolvers;
+export default resolvers

@@ -1,7 +1,7 @@
-import { Car } from "../models";
+import { Car } from '../models';
 
-export const user = {
-  cars(user) {
-      return Car.findByOwner(user._id);
-    }
-}
+export const User = {
+  cars(model) {
+    return Car.findByOwner(model.id);
+  },
+};

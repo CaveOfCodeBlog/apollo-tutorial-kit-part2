@@ -1,18 +1,17 @@
 type User {
-  _id: String,
-  displayName: String,
-  email: String,
-  firstName: String,
-  lastName: String,
-  birthday: String,
+  _id: String
+  displayName: String
+  email: String
+  firstName: String
+  lastName: String
+  birthday: String
   cars: [ Car ]
 }
 
-
 input InputUser {
-  displayName: String!,
-  email: String!,
-  firstName: String!,
-  lastName: String!,
-  birthday: String!,
+  displayName: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  birthday: String!
 }

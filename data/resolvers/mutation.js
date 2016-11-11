@@ -1,8 +1,10 @@
-import { User } from "../models";
+import { User, Car } from '../models';
 
-export const mutation = {
+export const Mutation = {
     createUser: (_, { user }) => {
-      console.log("MUTATION CALLED");
-      return User.create(user);
-    }
-}
+        return User.create(user);
+    },
+    createCar: (_, { car }) => {
+        return Car.create(car);
+    },
+};

@@ -1,14 +1,14 @@
-import { User as db } from "../connectors";
+import { User as db } from '../connectors';
 
-  const findById = (_id) => {
-    return db.findOne({ _id });
-  }
+const findById = (id) => {
+  return db.findById(id);
+};
 
-  const create = (user) => {
-    return db.create(user);
-  }
+const create = (user) => {
+  return db.create(user);
+};
 
-  export const User = {
-    findById,
-    create
-  }
+export const User = {
+  findById,
+  create,
+};

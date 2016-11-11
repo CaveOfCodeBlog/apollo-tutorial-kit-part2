@@ -1,10 +1,10 @@
-import { User } from "../models";
+import { User } from '../models';
 
-export const query = {
-   testString: () => {
+export const Query = {
+  testString: () => {
       return 'new string!!!';
-    },
-    getUser: (_, { id }) => {
+  },
+  getUser: (_, { id }) => {
       return User.findById(id);
-    }
-}
+  },
+};
