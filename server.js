@@ -1,10 +1,9 @@
 import express from 'express';
-import { apolloExpress, graphiqlExpress } from 'apollo-server';
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+import { graphqlExpress, graphiqlExpress } from "graphql-server-express";
+import { makeExecutableSchema } from 'graphql-tools';
 import * as bodyParser from 'body-parser';
 import schema from './data/schema';
 import resolvers from './data/resolvers';
-import Mocks from './data/mocks';
 
 const GRAPHQL_PORT = 8080;
 
@@ -15,15 +14,14 @@ const executableSchema = makeExecutableSchema({
   resolvers,
 });
 
-addMockFunctionsToSchema({
-  schema: executableSchema,
-  mocks: Mocks,
-  preserveResolvers: true,
-});
+graphQLServer.use(bodyParser.urlencoded({ extended: true }));
+graphQLServer.use(bodyParser.json());
 
-graphQLServer.use('/graphql', bodyParser.json(), apolloExpress({
-  schema: executableSchema,
-  context: {},
+graphQLServer.use("/graphql", graphqlExpress((req) => {
+  return {
+    schema: executableSchema,
+    context: { },
+  };
 }));
 
 graphQLServer.use('/graphiql', graphiqlExpress({
