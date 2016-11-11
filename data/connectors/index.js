@@ -1,12 +1,13 @@
-import * as Mongoose from 'mongoose';
+//import { Mongoose, Schema, Model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const CarSchema = new Mongoose.Schema({
+const CarSchema = new mongoose.Schema({
   model: String,
   registrationNo: String,
-  owner: Mongoose.Schema.Types.ObjectId,
+  owner: { type: String, ref: 'User' },
 });
 
-const UserSchema = new Mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   displayName: String,
   email: String,
   firstName: String,
@@ -14,11 +15,10 @@ const UserSchema = new Mongoose.Schema({
   birthday: String,
 });
 
-export const User = Mongoose.model('User', UserSchema);
-export const Car = Mongoose.model('Car', CarSchema);
+export const User = mongoose.model('User', UserSchema);
+export const Car = mongoose.model('Car', CarSchema);
 
-
-export const MongooseConnection = Mongoose.connect('mongodb://localhost:27017/test')
+export const MongooseConnection = mongoose.connect('mongodb://localhost:27017/test')
   .catch((connectError) => {
     console.error('Could not connect to MongoDB on port 27017', connectError);
   });
