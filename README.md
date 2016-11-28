@@ -7,28 +7,10 @@ Up-to-date documentation and explanations for Apollo Server can be found on [doc
 ## Getting started
 
 ```sh
-git clone https://github.com/apollostack/apollo-starter-kit
-cd apollo-starter-kit
+git clone https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2
+cd apollo-starter-kit-part2
 npm install
 npm start
 ```
 
-Then open [http://localhost:8080/graphql](http://localhost:8080/graphql)
-
-When you paste this on the left side of the page:
-
-```
-{
-  testString
-}
-```
-
-and hit the play button (cmd-return), then you should get this on the right side:
-
-```json
-{
-  "data": {
-    "testString": "It works!"
-  }
-}
-```  
+Follow the tutorial [here](http://caveofcode.com/2016/11/the-connector-and-model-layer-in-your-graphql-apollo-server/)
