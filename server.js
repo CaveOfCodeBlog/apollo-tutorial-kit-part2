@@ -17,7 +17,7 @@ const executableSchema = makeExecutableSchema({
 graphQLServer.use(bodyParser.urlencoded({ extended: true }));
 graphQLServer.use(bodyParser.json());
 
-graphQLServer.use("/graphql", graphqlExpress((req) => {
+graphQLServer.use("/graphql", graphqlExpress(() => {
   return {
     schema: executableSchema,
     context: { },
