@@ -8,7 +8,7 @@ Up-to-date documentation and explanations for Apollo Server can be found on [doc
 
 ```sh
 git clone https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2
-cd apollo-starter-kit-part2
+cd apollo-tutorial-kit-part2
 npm install
 npm start
 ```
