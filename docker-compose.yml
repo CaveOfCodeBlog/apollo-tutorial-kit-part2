@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nodejs:
+    image: node:6.9
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: ./node_modules/.bin/nodemon server.js
+    ports:
+      - "8080:8080"
+
+  # Use the `mongo` hostname for mongoose connection string 
+  mongo:
+    image: mongo
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+
+volumes:
+  mongo-data:

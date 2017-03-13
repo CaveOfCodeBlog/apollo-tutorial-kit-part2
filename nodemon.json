@@ -6,7 +6,7 @@
     "BABEL_DISABLE_CACHE": 1
   },
   "execMap": {
-    "js": "babel-node"
+    "js": "./node_modules/.bin/babel-node"
   },
   "ext": ".js,.json,.graphql,.gql",
   "watch": "./"
